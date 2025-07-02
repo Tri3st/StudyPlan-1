@@ -1,5 +1,7 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Collections;
 
 class Main {
 
@@ -20,8 +22,25 @@ class Main {
     p1.addSub(PlanCat.LE, "10, 11, 12", 10, LocalDate.parse("11-10-21", Main.format2y));
     p1.addSub(PlanCat.LE, "13, 14", 10, LocalDate.parse("25-10-21", Main.format2y));
     p1.addSub(PlanCat.OPD, "Huiswerk", 10, LocalDate.parse("3-11-21", Main.format2y));
-    p1.addSub(PlanCat.TNT, "Tentamen", 10, LocalDate.parse("4-11-21", Main.format2y));
+    p1.addSub(PlanCat.TNT, "Tentamen", 20, LocalDate.parse("4-11-21", Main.format2y));
+
+    Course ica2 = new Course(
+      "Logica & Informatica",
+      "IB1902",
+      "LI"
+    );
+
+    Planning p2 = new Planning(ica2);
+
+    p2.addSub(PlanCat.LE, new String[]{"1", "2", "3"}, 10, LocalDate.parse("01-02-2026", Main.format4y));
+    p2.addSub(PlanCat.LE, new String[]{"4", "5", "6"}, 10, LocalDate.parse("01-02-2026", Main.format4y));
+    p2.addSub(PlanCat.LE, new String[]{"7", "8"}, 10, LocalDate.parse("01-02-2026", Main.format4y));
+    p2.addSub(PlanCat.LE, new String[]{"9", "10", "11"}, 10, LocalDate.parse("01-02-2026", Main.format4y));
+    p2.addSub(PlanCat.LE, new String[]{"12", "13"}, 10, LocalDate.parse("01-02-2026", Main.format4y));
+    p2.addSub(PlanCat.TNT, "Tentamen", 20, LocalDate.parse("01-02-2026", Main.format4y));
+
     System.out.println(p1);
+    System.out.println(p2);
 
   }
 }

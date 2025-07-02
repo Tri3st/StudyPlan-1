@@ -18,6 +18,10 @@ public class Course {
     return this.code;
   }
 
+  public String getDescription(){
+    return this.description;
+  }
+
   public void setDescription(String description){
     this.description = description;
   }

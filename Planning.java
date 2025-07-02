@@ -27,6 +27,13 @@ public class Planning {
     return true;
   }
 
+  public boolean addSub(PlanCat category, String[] planDetails, int timeAmnt, LocalDate dateDue){
+    ArrayList<String> lst = new ArrayList<>();
+    for (String s: planDetails) lst.add(s);
+    subs.add(new SubPlan(category, lst, timeAmnt, dateDue));
+    return true;
+  }
+
   public String toString(){
     String t = "";
     t += this.course.getCode() + "\n";
